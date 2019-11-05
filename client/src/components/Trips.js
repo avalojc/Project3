@@ -20,7 +20,24 @@ class Trips extends Component {
             })
         })
     }
+    createNewTrip=()=> {
+        const newTrip = {
+            name: this.state.newTripName,
+        };
+        axios.post('/api/trip', newTrip)
+        .then(()=> {this.refreshTrip()})
+    }
+    onNewTripAdd = (event) => {
+        const newTripName = event.target.value;
+        this.setState({newTripName: newTripName})
+    }
+
+
+
   render () {
+
+    
+
     const tripListElements = this.state.tripList.map((trip) => {
         return(
             <SingleTrip
@@ -31,11 +48,24 @@ class Trips extends Component {
             />
         )
     })
-    
+
     return (
         <div>
-            <h1>Hello World</h1>
-            {tripListElements}
+            <h1>Hike, Bike, Paddle and Ski</h1>
+            <form>
+                <input type="string"
+                    name="newTripName"
+                    placeholder="Add a Trip"
+                    required="required"
+                    onChange={this.onNewTripAdd}
+                    value={this.state.newTripName}
+                />
+
+                <input type="submit"
+                    onClick={() => this.createNewTrip()}
+                />
+            </form>
+            <div>{tripListElements}</div>
         </div>
         )
     }
