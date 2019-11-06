@@ -22,6 +22,25 @@
 .App-link {
   color: #61dafb;
 }
+.fullNavUnit{
+  background-color: black;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  margin-top: 1px;
+}
+.fullNavUnit:hover{
+  background-color: red;
+}
+.navWrapper{
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.linkBucket{
+  color: white;
+  padding: 4px;
+}
 
 @keyframes App-logo-spin {
   from {

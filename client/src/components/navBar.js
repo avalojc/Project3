@@ -5,10 +5,10 @@ class NavBar extends Component {
     render () {
 
         return (
-            <div>
-                <div >
+            <div className="fullNavUnit">
+                <div className="navWrapper">
                     <Link to="/" ><div className="linkBucket" >Home</div> </Link>
-                    <Link to="/trips"><div className="linkBucket" >View All Trips</div></Link>
+                    <Link to="/trips"><div className="linkBucket" >All Trips</div></Link>
                     <Link to="/trips/createTrip"><div className="linkBucket" >Create Trip</div></Link>
                 </div>
             </div>
