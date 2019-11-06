@@ -11,7 +11,7 @@ class SingleTrip extends Component {
         this.refreshTrip()
     }
     refreshTrip=() => {
-        axios.get('/api/trip/:id')
+        axios.get('/api/trip/:tripId')
         .then((response) => {
             this.setState({
                 tripList: response.data
@@ -19,17 +19,22 @@ class SingleTrip extends Component {
             
         })
     }
+    deleteTrip=() => {
+        console.log(`${this}`)
+    }
 
   render () {
       const {
           name,
           legId
       } = this.props;
-
+    
+ 
     return (
-        <div>
+        <div >
             <a href='5dc1d9381e7ef24a68864f4c'><h3> {name || 'default'} </h3></a>
             <p> {legId || 'default Id'} </p>
+            <button onClick={() => this.deleteTrip()}>Delete Trip</button>
         </div>
 
     )

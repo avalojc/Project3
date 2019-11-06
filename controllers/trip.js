@@ -3,7 +3,7 @@ const express = require('express')
 const tripApi = require('../models/trip.js')
 
 const tripRouter = express.Router()
-//getall
+//getAll
 tripRouter.get('/', (req, res) => {
   tripApi.getAllTrip()
   .then((allTrip) => {
