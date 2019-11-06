@@ -1,13 +1,15 @@
+/* **********************************App************************************** */
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -18,34 +20,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
-.fullNavUnit{
-  background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgb(0, 78, 124) 0%,
-     rgb(26, 139, 214) 82%);
-
-  height: 2.5em;
-  display: flex;
-  justify-content: center;
-  margin-top: 1px;
-}
-.fullNavUnit:hover{
-  background-color: red;
-}
-.navWrapper{
-  width: 60%;
-  display: flex;
-  justify-content: space-evenly;
-}
-.linkBucket{
-  color: white;
-  padding: 4px;
-  font-size: 1em;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -54,3 +31,54 @@
     transform: rotate(360deg);
   }
 }
+/* ****************************************wrapper********************************************* */
+.wrapper {
+  width: 100%;
+  height: 1000px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: center; 
+}
+/* ****************************************nav bar********************************************* */
+.fullNavUnit{
+  display: flex;
+  justify-content: center;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgb(0, 78, 124) 0%,
+     rgb(26, 139, 214) 82%);
+
+  height: 2.5em;
+
+  margin-top: 1px;
+}
+.fullNavUnit:hover{
+  background-color: red;
+}
+
+.navWrapper{
+  width: 60%;
+  display: flex;
+  justify-content:space-evenly ;
+  align-items: center;
+}
+.linkBucket{
+  color: white;
+  padding: 4px;
+  font-size: 1em;
+}
+/* ****************************************WIP********************************************* */
+.homepage{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly ;
+  align-items: center;
+}
+.imageLinks{
+  width: 40%;
+  display: flex;
+  justify-content:space-between ;
+  align-items: flex-end;
+}
+

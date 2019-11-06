@@ -40,29 +40,15 @@ class Trips extends Component {
 
 
     return (
-        <div>
-            <h1>Homepage</h1>
-            <a href="/CreateNewTrip"><img src='' alt='hike'></img></a>
-            <a href="/CreateNewTrip"><img src='' alt='bike'></img></a>
-            <a href="/CreateNewTrip"><img src='' alt='paddle'></img></a>
-            <a href="/CreateNewTrip"><img src='' alt='ski'></img></a>
+        <div className='homepage'>
+            <div className='imageLinks'>
+                <a href="/CreateNewTrip"><img src={require('../img/hike.png')} alt='hike'></img></a>
+                <a href="/CreateNewTrip"><img src={require('../img/bike.png')} alt='bike'></img></a>
+                <a href="/CreateNewTrip"><img src={require('../img/paddle.png')} alt='paddle'></img></a>
+                <a href="/CreateNewTrip"><img src={require('../img/ski.png')} alt='ski'></img></a>
+            </div>
 
 
-            <form>
-                <input type="string"
-                    name="newTripName"
-                    placeholder="Add a Trip"
-                    required="required"
-                    onChange={this.onNewTripAdd}
-                    value={this.state.newTripName}
-                />
-
-                <input type="submit"
-                    onClick={() => this.createNewTrip()}
-                />
-            </form>
-            <a href="/Trips">View All Trips</a>
-            {/* <div>{tripListElements}</div> */}
         </div>
         )
     }

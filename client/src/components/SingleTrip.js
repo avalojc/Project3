@@ -32,7 +32,8 @@ class SingleTrip extends Component {
  
     return (
         <div >
-            <a href='5dc1d9381e7ef24a68864f4c'><h3> {name || 'default'} </h3></a>
+            <a href='5dc1d9381e7ef24a68864f4c'>
+            <h3> {name || 'default'} </h3></a>
             <p> {legId || 'default Id'} </p>
             <button onClick={() => this.deleteTrip()}>Delete Trip</button>
         </div>

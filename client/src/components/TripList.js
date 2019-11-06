@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import SingleTrip from './SingleTrip'
 
-
 class TripList extends Component {
     state = {
         tripList: [],
@@ -12,7 +11,6 @@ class TripList extends Component {
     }
     componentDidMount() {
         this.refreshTrip()
-
     }
     refreshTrip=() => {
         axios.get('/api/trip')
@@ -33,39 +31,21 @@ class TripList extends Component {
         const newTripName = event.target.value;
         this.setState({newTripName: newTripName})
     }
-
-
-
   render () {
-
     const tripListElements = this.state.tripList.map((trip) => {
         return(
+            <div>
             <SingleTrip 
                 key={trip._id}
                 tripId={trip._id}
                 name={trip.name}
                 legId={trip.legId}
-            />
+            /></div>
         )
     })
-
     return (
         <div >
-
             <h1>TripList</h1>
-            <form>
-                <input type="string"
-                    name="newTripName"
-                    placeholder="Add a Trip"
-                    required="required"
-                    onChange={this.onNewTripAdd}
-                    value={this.state.newTripName}
-                />
-
-                <input type="submit"
-                    onClick={() => this.createNewTrip()}
-                />
-            </form>
             <div >{tripListElements}</div>
         </div>
         )
