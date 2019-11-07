@@ -32,13 +32,9 @@ class TripList extends Component {
         this.setState({newTripName: newTripName})
     }
 
-
-
-
   render () {
     const tripListElements = this.state.tripList.map((trip) => {
         return(
-            
             <SingleTrip 
                 key={trip._id}
                 tripId={trip._id}

@@ -10,7 +10,6 @@ class Trips extends Component {
     }
     componentDidMount() {
         this.refreshTrip()
-
     }
     refreshTrip=() => {
         axios.get('/api/trip')
@@ -31,15 +30,7 @@ class Trips extends Component {
         const newTripName = event.target.value;
         this.setState({newTripName: newTripName})
     }
-
-
-
   render () {
-
-
-
-
-
     return (
         <div className='homepage'>
             <div className='imageLinks'>
@@ -48,8 +39,6 @@ class Trips extends Component {
                 <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/paddle.png')} alt='paddle'></img></Link>
                 <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/ski.png')} alt='ski'></img></Link>
             </div>
-
-
         </div>
         )
     }

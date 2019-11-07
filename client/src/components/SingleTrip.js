@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {    Link  } from "react-router-dom";
 
-
 class SingleTrip extends Component {
     state = {
         name: '',
@@ -20,7 +19,6 @@ class SingleTrip extends Component {
             
         })
     }
-
     deleteTrip = (tripId) => {
         console.log('you clicked me')
         console.log(this.props)
@@ -28,10 +26,6 @@ class SingleTrip extends Component {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
         .then(() => {this.refreshTrip()})
     }
-
-
-
-
   render () {
       const {
           name,
