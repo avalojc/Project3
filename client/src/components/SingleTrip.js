@@ -24,7 +24,7 @@ class SingleTrip extends Component {
         console.log('you clicked me')
         console.log(this.props)
         console.log(this)
-        axios.delete(`/api/trip/${tripId}`, tripId)
+        axios.delete(`/api/trip/${this.props.tripId}`, tripId)
         .then(() => {this.refreshTrip()})
     }
 
