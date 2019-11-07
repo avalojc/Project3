@@ -1,7 +1,14 @@
 const mongoose = require('./connection.js')
 const StationaryModelSchema = new mongoose.Schema({
   name: String,
-  legId: String,
+  tripId: String,
+  methodOfStay: String,
+  costOfStay: Number,
+  permitOrReservation: Boolean,
+  lengthOfStay: Number,
+  eating: {eat: Boolean, cost: Number},
+  amenities: String,
+  access: { waterAccess: Boolean, electricalAccess: Boolean, internetAccess: Boolean, roomService: Boolean}
 })
 const StationaryCollection = mongoose.model('Stationary', StationaryModelSchema)
 //getAll

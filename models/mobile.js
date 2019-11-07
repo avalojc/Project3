@@ -2,8 +2,15 @@ const mongoose = require('./connection.js')
 const MobileModelSchema = new mongoose.Schema({
   name: String,
   tripId: String,
-  motionOrStationary: String,
-
+  methodOfTransport: String,
+  costOfTransport: Number,
+  permitOrPaperwork: Boolean,
+  lengthOfTravel: Number,
+  eating: {eat: Boolean, cost: Number},
+  packWeight: Number,
+  equipmentRequired: {required: Boolean, type: String},
+  technicalSkill: {isTechnical: Boolean, levelOfDifficulty: String},
+  passportRequired: Boolean,
 })
 const MobileCollection = mongoose.model('Mobile', MobileModelSchema)
 //getAll
