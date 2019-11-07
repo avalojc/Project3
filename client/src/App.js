@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/trips" component={TripList} />
           <Route exact path="/trips/createTrip" component={CreateTrip}/>
-          <Route exact path="/trips/:id" component={SingleTrip}/>
+          <Route exact path="/trips/:tripId" component={SingleTrip}/>
         </Switch>
           </div>
       </Router>
