@@ -6,29 +6,32 @@ class SingleTrip extends Component {
     state = {
         name: '',
         legId: ''
-    }
+    } //this will be used to edit eventually?
     componentDidMount() {
         this.refreshTrip()
     }
     refreshTrip=() => {
         axios.get('/api/trip/')
-        .then((response) => {
+        .then((response) => {console.log('here')
             this.setState({
                 tripList: response.data
             })
-            
         })
     }
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
+        .then(() => {this.refreshTrip()})
         .then(() => {this.refreshTrip()})
     }
   render () {
       const {
           name,
           legId,
-          tripId
+        //   tripId
       } = this.props;
+      
+
+
     return (
         <div className="singleTripUnit">
             <Link to='/trips/:tripId'>
