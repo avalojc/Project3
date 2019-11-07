@@ -8,7 +8,7 @@ const MobileModelSchema = new mongoose.Schema({
   lengthOfTravel: Number,
   eating: {eat: Boolean, cost: Number},
   packWeight: Number,
-  equipmentRequired: {required: Boolean, type: String},
+  // equipmentRequirable: {requireThis: Boolean, typeOfReq: String},
   technicalSkill: {isTechnical: Boolean, levelOfDifficulty: String},
   passportRequired: Boolean,
 })
