@@ -31,6 +31,10 @@ class TripList extends Component {
         const newTripName = event.target.value;
         this.setState({newTripName: newTripName})
     }
+
+
+
+
   render () {
     const tripListElements = this.state.tripList.map((trip) => {
         return(
@@ -44,9 +48,9 @@ class TripList extends Component {
         )
     })
     return (
-        <div >
+        <div className='tripListWidth'>
             <h1>TripList</h1>
-            <div >{tripListElements}</div>
+            <div className="tripField">{tripListElements}</div>
         </div>
         )
     }

@@ -11,7 +11,7 @@ class SingleTrip extends Component {
         this.refreshTrip()
     }
     refreshTrip=() => {
-        axios.get('/api/trip/:tripId')
+        axios.get('/api/trip/')
         .then((response) => {
             this.setState({
                 tripList: response.data
@@ -29,9 +29,12 @@ class SingleTrip extends Component {
           legId
       } = this.props;
     
+
+
+
  
     return (
-        <div >
+        <div className="singleTripUnit">
             <a href='5dc1d9381e7ef24a68864f4c'>
             <h3> {name || 'default'} </h3></a>
             <p> {legId || 'default Id'} </p>
