@@ -1,5 +1,6 @@
 //*****************************************WIP***********************//
 import React, { Component } from 'react'
+import {    Link  } from "react-router-dom";
 import axios from 'axios'
 
 class Trips extends Component {
@@ -42,10 +43,10 @@ class Trips extends Component {
     return (
         <div className='homepage'>
             <div className='imageLinks'>
-                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/hike.png')} alt='hike'></img></a>
-                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/bike.png')} alt='bike'></img></a>
-                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/paddle.png')} alt='paddle'></img></a>
-                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/ski.png')} alt='ski'></img></a>
+                <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/hike.png')} alt='hike'></img></Link>
+                <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/bike.png')} alt='bike'></img></Link>
+                <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/paddle.png')} alt='paddle'></img></Link>
+                <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/ski.png')} alt='ski'></img></Link>
             </div>
 
 
