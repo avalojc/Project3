@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
-import SingleTrip from './SingleTrip'
+import SingleTripItem from './SingleTripItem'
 
 class TripList extends Component {
     state = {
@@ -35,7 +35,7 @@ class TripList extends Component {
   render () {
     const tripListElements = this.state.tripList.map((trip) => {
         return(
-            <SingleTrip 
+            <SingleTripItem 
                 key={trip._id}
                 tripId={trip._id}
                 name={trip.name}
