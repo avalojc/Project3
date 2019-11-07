@@ -42,10 +42,10 @@ class Trips extends Component {
     return (
         <div className='homepage'>
             <div className='imageLinks'>
-                <a href="/trips/createTrip"><img src={require('../img/hike.png')} alt='hike'></img></a>
-                <a href="/trips/createTrip"><img src={require('../img/bike.png')} alt='bike'></img></a>
-                <a href="/trips/createTrip"><img src={require('../img/paddle.png')} alt='paddle'></img></a>
-                <a href="/trips/createTrip"><img src={require('../img/ski.png')} alt='ski'></img></a>
+                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/hike.png')} alt='hike'></img></a>
+                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/bike.png')} alt='bike'></img></a>
+                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/paddle.png')} alt='paddle'></img></a>
+                <a href="/trips/createTrip"><img className="tinyIcon" src={require('../img/ski.png')} alt='ski'></img></a>
             </div>
 
 
