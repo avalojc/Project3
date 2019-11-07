@@ -1,7 +1,7 @@
 const mongoose = require('./connection.js')
 const TripModelSchema = new mongoose.Schema({
   name: String,
-  legId: String
+  legId: String,
 })
 const TripCollection = mongoose.model('Trip', TripModelSchema)
 //getAll

@@ -19,20 +19,23 @@ class SingleTrip extends Component {
             
         })
     }
-    deleteTrip=() => {
-        console.log(`${this}`)
+
+    deleteTrip = (tripId) => {
+        console.log('you clicked me')
+        console.log(this.props)
+        console.log(this)
+        axios.delete(`/api/trip/${tripId}`, tripId)
+        .then(() => {this.refreshTrip()})
     }
+
+
+
 
   render () {
       const {
           name,
           legId
       } = this.props;
-    
-
-
-
- 
     return (
         <div className="singleTripUnit">
             <a href='5dc1d9381e7ef24a68864f4c'>
@@ -40,9 +43,7 @@ class SingleTrip extends Component {
             <p> {legId || 'default Id'} </p>
             <button onClick={() => this.deleteTrip()}>Delete Trip</button>
         </div>
-
     )
-        
 } 
 }
 

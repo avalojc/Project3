@@ -1,4 +1,4 @@
-//*****************************************WIP***********************//
+//*****************************************Trip List***********************//
 
 import React, { Component } from 'react'
 import axios from 'axios'
@@ -38,13 +38,13 @@ class TripList extends Component {
   render () {
     const tripListElements = this.state.tripList.map((trip) => {
         return(
-            <div>
+            
             <SingleTrip 
                 key={trip._id}
                 tripId={trip._id}
                 name={trip.name}
                 legId={trip.legId}
-            /></div>
+            />
         )
     })
     return (

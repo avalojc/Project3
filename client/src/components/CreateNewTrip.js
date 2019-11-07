@@ -22,32 +22,36 @@ class Trips extends Component {
             })
         })
     }
-    setRedirect = () => {
+    setTheRedirect = () => {
         this.setState({
             redirect: true
         })
-    }
+    }        
+    renderRedirect = () => {
+    if (this.state.redirect === true)
+            {return <Redirect to='/trips' />}}
+
     createNewTrip=()=> {
         const newTrip = {
             name: this.state.newTripName,
         };
         axios.post('/api/trip', newTrip)
-        if (this.state.redirect)
-            {return <Redirect to='/' />}
     }
     onNewTripAdd = (event) => {
         const newTripName = event.target.value;
         this.setState({newTripName: newTripName})
     }
-
+    comboCreateAndRedirect= () => {
+        this.createNewTrip()
+        this.setTheRedirect()
+        // .then(()=>{this.setTheRedirect()})
+    }
 
 
   render () {
-
-
-
     return (
         <div>
+            {this.renderRedirect()}
             <h1>Create New Trip</h1>
             <form>
                 <input type="string"
@@ -59,7 +63,7 @@ class Trips extends Component {
                 />
 
                 <input type="submit"
-                    onClick={ () => this.createNewTrip() }
+                    onClick={ () => this.comboCreateAndRedirect() }
                 />
             </form> 
 
