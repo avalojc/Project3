@@ -1,6 +1,8 @@
 const express = require('express')
 
 const tripApi = require('../models/trip.js')
+const mobileApi = require('../models/mobile.js')
+const stationaryApi = require('../models/stationary.js')
 
 const tripRouter = express.Router()
 //getAll
@@ -34,6 +36,14 @@ tripRouter.delete('/:id', (req, res) => {
      res.json(deleteTrip)
    })
 })
+
+//*******************************************linking*********************************** */
+  
+
+
+
+
+
 
 module.exports = {
   tripRouter

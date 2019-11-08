@@ -5,20 +5,21 @@ import { Link } from "react-router-dom";
 
 class SingleTripDetail extends Component {
     state = {
+        tripList: [],
+        newTripName: '',
         name: '',
         legId: ''
-    } //this will be used to edit eventually?
+    }
+    refreshTrip=() => {
+        axios.get('/api/trip')
+        .then((response)=> {
+            this.setState({
+                tripList: response.data
+            })
+        })
+    }
     componentDidMount() {
         this.refreshTrip()
-    }
-    refreshTrip = () => {
-        axios.get('/api/trip/')
-            .then((response) => {
-                console.log('here')
-                this.setState({
-                    tripList: response.data
-                })
-            })
     }
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
@@ -35,11 +36,10 @@ class SingleTripDetail extends Component {
 
 
         return (
-            <div className="singleTripUnit">
-                <Link to={`/trips/${tripId}`}>
-                    <h3> {name || 'Peter Piper'} </h3></Link>
+            <div className="singleTripDetail">
+                <h3> {name || 'Peter Piper'} </h3>
                 <p> {legId || 'Yeet Id'} </p>
-                <p> {this.props.match.params.tripId.name}</p>
+                <p> {this.props.match.params.tripId || 'aqui'}</p>
                 <button onClick={() => this.deleteTrip()}>Delete Trip</button>
             </div>
         )
