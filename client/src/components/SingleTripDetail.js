@@ -30,7 +30,7 @@ class SingleTripDetail extends Component {
         const {
             name,
             legId,
-            tripId
+            // tripId
         } = this.props;
 
 
@@ -40,6 +40,7 @@ class SingleTripDetail extends Component {
                 <h3> {name || 'Peter Piper'} </h3>
                 <p> {legId || 'Yeet Id'} </p>
                 <p> {this.props.match.params.tripId || 'aqui'}</p>
+                <Link to={`/trips/${this.props.match.params.tripId}`}>See Assn</Link> <br></br>
                 <button onClick={() => this.deleteTrip()}>Delete Trip</button>
             </div>
         )

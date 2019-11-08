@@ -6,6 +6,7 @@ import CreateTrip from './components/CreateNewTrip'
 import NavBar from './components/navBar';
 import './App.css';
 import SingleTripDetail from './components/SingleTripDetail';
+import ViewTripAssn from './components/ViewTripAssnLists';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/trips" component={TripList} />
             <Route exact path="/trips/createTrip" component={CreateTrip}/>
             <Route exact path="/trips/:tripId" component={SingleTripDetail}/>
+            <Route exact path="/trips/assn/:tripId" component={ViewTripAssn}/>
           </Switch>
         </div>
       </Router>
