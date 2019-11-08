@@ -35,7 +35,7 @@ class SingleTripItem extends Component {
 
         return (
             <div className="singleTripUnit">
-                <Link to={`/trips/${tripId}`}>
+                <Link to={`/trips/single/${tripId}`}>
                 <h3> {name || 'default'} </h3></Link>
                 <p> {legId || 'SingleTripItem Id'} </p>
                 <button onClick={() => this.deleteTrip()}>Delete Trip</button>

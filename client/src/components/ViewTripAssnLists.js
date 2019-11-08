@@ -11,7 +11,8 @@ class ViewTripAssn extends Component {
         this.refreshTrip()
     }
     refreshTrip=() => {
-        axios.get('/api/stationary/byTripId/5dc1d9381e7ef24a68864f4c')
+        console.log(this.props.match.params.tripId)
+        axios.get(`/api/stationary/byTripId/${this.props.match.params.tripId}`)
         .then((response)=> {
             console.log(response)
             this.setState({
@@ -29,10 +30,21 @@ class ViewTripAssn extends Component {
         const stationaryListElements = this.state.stationaryList.map((station) => {
             return(
                 <SingleStationElement 
+                    key={station._id}
                     name={station.name}
                     stationId={station._id}
                     tripId={station.tripId}
-
+                    methodOfStay={station.methodOfStay} 
+                    costOfStay={station.costOfStay} 
+                    permitOrReservation={station.permitOrReservation} 
+                    lengthOfStay={station.lengthOfStay} 
+                    eatYes={station.eating.eat} //duo
+                    eatCost={station.eating.cost} //duo
+                    amenities={station.amenities}
+                    accessH2O={station.access.waterAccess} //duo
+                    accessElectric={station.access.electricalAccess} //duo
+                    accessWeb={station.access.internetAccess} //duo
+                    accessRS={station.access.roomService} //duo
                 />
             )
         })
@@ -40,7 +52,7 @@ class ViewTripAssn extends Component {
         return (
             //correct to show {singleMobile/single Station}
             <div className="singleTripDetail">
-                <p> { stationaryListElements ||'aqui'}</p>
+                <div> { stationaryListElements ||'aqui'}</div>
 
             </div>
         )
