@@ -6,11 +6,14 @@ const stationaryRouter = express.Router()
 //*************************This is a weird thing that i need to ask about************************************/
 stationaryRouter.get('/new', (req, res) => {
   res.render('/createStationaryForm') //*************What is this create stationary Form**********/
-})
+}) //this form in react with this id
 
 //*****************************This is where you pass the parent into the child*******************************************/
-stationaryRouter.get('/:tripId', (req, res) => {
-  res.render('/createStationaryForm', {tripId: req.params.tripId}) //*************What is this create stationary Form**********/
+stationaryRouter.get('/byTripId/:tripId', (req, res) => {
+  stationaryApi.getAllStationaryByTripId(req.params.tripId) //*************What is this create stationary Form**********/
+    .then((stationeries) => {
+      res.json(stationeries)
+    })
 })
 
 //getAll

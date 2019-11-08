@@ -1,7 +1,7 @@
 const mongoose = require('./connection.js')
 const StationaryModelSchema = new mongoose.Schema({
   name: String,
-  tripId: String,
+  tripId: mongoose.ObjectId, //*********************************Aqui************************ */
   methodOfStay: String,
   costOfStay: Number,
   permitOrReservation: Boolean,
@@ -9,7 +9,7 @@ const StationaryModelSchema = new mongoose.Schema({
   eating: {eat: Boolean, cost: Number},
   amenities: String,
   access: { waterAccess: Boolean, electricalAccess: Boolean, internetAccess: Boolean, roomService: Boolean},
-  tripId: mongoose.ObjectId, //*********************************Aqui************************ */
+  
 })
 const StationaryCollection = mongoose.model('Stationary', StationaryModelSchema)
 //getAll
