@@ -114,3 +114,8 @@ a{
  }
 
  /* ***********************************************************HP Image ********************************************* */
+.singleStationDetail{
+  margin: 10px;
+  background-color: palevioletred;
+  width: 750px;
+}

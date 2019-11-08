@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom";
 
 
-class ViewTripAssn extends Component {
+class SingleStationElement extends Component {
     state = {
         stationaryList: [],
         newStationName: '',
@@ -26,21 +25,20 @@ class ViewTripAssn extends Component {
     render() {
         const {
             name,
-            legId,
+            stationId,
+            tripId
         } = this.props;
 
 
 
         return (
-            <div className="singleTripDetail">
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-
+            <div className="singleStationDetail">
+                <p> {name}</p>
+                <p> {stationId}</p>
+                <p> {tripId}</p>
             </div>
         )
     }
 }
 
-export default ViewTripAssn
+export default SingleStationElement

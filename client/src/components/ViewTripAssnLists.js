@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom";
-
+import SingleStationElement from './SingleStationaryItem'
 
 class ViewTripAssn extends Component {
     state = {
@@ -12,13 +11,13 @@ class ViewTripAssn extends Component {
         this.refreshTrip()
     }
     refreshTrip=() => {
-        axios.get('/api/stationary/byTripId/5dc598bbd01fd54300eafaab')
+        axios.get('/api/stationary/byTripId/5dc1d9381e7ef24a68864f4c')
         .then((response)=> {
-
+            console.log(response)
             this.setState({
                 stationaryList: response.data
             })
-            // .then(console.log(this.state))
+            
         })
     }
 //need create new station/mobile
@@ -27,20 +26,21 @@ class ViewTripAssn extends Component {
     render() {
 
         //correct render to return single state and single mobile
-        const {
-            name,
-            legId,
-        } = this.props;
+        const stationaryListElements = this.state.stationaryList.map((station) => {
+            return(
+                <SingleStationElement 
+                    name={station.name}
+                    stationId={station._id}
+                    tripId={station.tripId}
 
-
+                />
+            )
+        })
 
         return (
             //correct to show {singleMobile/single Station}
             <div className="singleTripDetail">
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <p> {this.props.match.params.tripId || 'aqui'}</p>
+                <p> { stationaryListElements ||'aqui'}</p>
 
             </div>
         )
