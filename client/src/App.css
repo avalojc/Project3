@@ -113,9 +113,13 @@ a{
   background-color: green;
  }
 
- /* ***********************************************************HP Image ********************************************* */
+ /* ***********************************************************station blocks ********************************************* */
 .singleStationDetail{
   margin: 10px;
   background-color: palevioletred;
   width: 750px;
+}
+.stationaryList {
+  display: flex;
+  justify-content: center;
 }

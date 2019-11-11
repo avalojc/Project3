@@ -41,9 +41,9 @@ class ViewTripAssn extends Component {
                     eatYes={station.eating.eat} //duo
                     eatCost={station.eating.cost} //duo
                     amenities={station.amenities}
-                    accessH2O={station.access.waterAccess} //duo
-                    accessElectric={station.access.electricalAccess} //duo
-                    accessWeb={station.access.internetAccess} //duo
+                    accessH2O={station.access.waterAccess} //quad
+                    accessElectric={station.access.electricalAccess} //quad
+                    accessWeb={station.access.internetAccess} //quad
                     accessRS={station.access.roomService} //duo
                 />
             )
@@ -51,7 +51,7 @@ class ViewTripAssn extends Component {
 
         return (
             //correct to show {singleMobile/single Station}
-            <div className="singleTripDetail">
+            <div className="stationaryList">
                 <div> { stationaryListElements ||'aqui'}</div>
 
             </div>
