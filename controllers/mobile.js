@@ -3,6 +3,19 @@ const express = require('express')
 const mobileApi = require('../models/mobile.js')
 
 const mobileRouter = express.Router()
+//*************************This is a weird thing that i need to ask about************************************/
+mobileRouter.get('/new', (req, res) => {
+  res.render('/createMobileForm') //*************What is this create mobile Form**********/
+}) //this form in react with this id
+
+//*****************************This is where you pass the parent into the child*******************************************/
+mobileRouter.get('/byTripId/:tripId', (req, res) => {
+  mobileApi.getAllMobileByTripId(req.params.tripId) //*************What is this create mobile Form**********/
+    .then((mobiles) => {
+      res.json(mobiles)
+    })
+})
+
 //getAll
 mobileRouter.get('/', (req, res) => {
   mobileApi.getAllMobile()

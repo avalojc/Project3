@@ -20,6 +20,10 @@ tripRouter.get('/:id', (req, res) => {
       .then((tripStationary) => {
         res.render('/singleTrip', {singleTrip, tripStationary})
       })
+      mobileApi.getAllMobileByTripId(req.params.id)
+      .then((tripMobile) => {
+        res.render('/singleTrip', {singleTrip, tripMobile})
+      })
     })
 })//create
 tripRouter.post('/', (req, res) => {
