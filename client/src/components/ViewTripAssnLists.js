@@ -89,6 +89,9 @@ class ViewTripAssn extends Component {
         return (
             //correct to show {singleMobile/single Station}
             <div className="travelListAssn">
+            <div id='thePathway'>
+                The Pathway
+            </div>
             <div className="stationaryList">
                 <div> { stationaryListElements }</div>
             </div>
