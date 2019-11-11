@@ -1,7 +1,7 @@
 const mongoose = require('./connection.js')
 const MobileModelSchema = new mongoose.Schema({
   name: String,
-  tripId: String,
+  tripId: mongoose.ObjectId,
   methodOfTransport: String,
   costOfTransport: Number,
   permitOrPaperwork: Boolean,
@@ -29,10 +29,14 @@ const updateMobile = (id, mobileData) => {
 const deleteMobile = (id) => {
   return MobileCollection.deleteOne({_id: id})
 }
+const getAllMobileByTripId = (tripId) => {
+  return MobileCollection.find({tripId: tripId})
+}
 module.exports = {
   getAllMobile,
   getOneMobile,
   createMobile,
   updateMobile,
-  deleteMobile
+  deleteMobile,
+  getAllMobileByTripId
 }
