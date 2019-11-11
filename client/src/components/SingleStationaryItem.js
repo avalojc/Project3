@@ -31,7 +31,6 @@ class SingleStationElement extends Component {
             costOfStay,
             permitOrReservation,
             lengthOfStay,
-            eating,
             amenities,
             eatCost,
             eatYes,

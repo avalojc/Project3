@@ -31,6 +31,13 @@
     transform: rotate(360deg);
   }
 }
+/* ***************************************Body************************************************* */
+div {
+  font-family: 'Oswald', sans-serif;
+}
+
+
+
 /* ****************************************wrapper********************************************* */
 .wrapper {
   width: 100%;
@@ -120,6 +127,15 @@ a{
   width: 750px;
 }
 .stationaryList {
+  display: flex;
+  justify-content: center;
+}
+.singleMobileDetail{
+  margin: 10px;
+  background-color: paleturquoise;
+  width: 750px;
+}
+.mobileList {
   display: flex;
   justify-content: center;
 }
