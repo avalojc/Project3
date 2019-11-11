@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 
-class SingleStationElement extends Component {
+class SingleMobileElement extends Component {
     state = {
         mobileList: [],
         newMobileName: '',
@@ -57,4 +57,4 @@ class SingleStationElement extends Component {
     }
 }
 
-export default SingleStationElement
+export default SingleMobileElement
