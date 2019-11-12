@@ -23,7 +23,7 @@ class SingleMobileElement extends Component {
             name,
             // mobileId,
             // tripId,
-            // methodOfTransport,
+             methodOfTransport,
             // costOfTransport,
             // permitOrPaperwork,
             // lengthOfTravel,
@@ -35,7 +35,7 @@ class SingleMobileElement extends Component {
             // passportRequired,
         } = this.props;
         return (
-            <div className="singleMobileDetail" >
+            <div className="singleMobileDetail" id={methodOfTransport || "defaultId"}>
                 <h4> Title: {name}  </h4>
 
             </div>

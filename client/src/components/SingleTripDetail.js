@@ -17,7 +17,8 @@ class SingleTripDetail extends Component {
         this.refreshTrip()
     }
     deleteTrip = (tripId) => {
-        axios.delete(`/api/trip/${this.props.tripId}`, tripId)
+        console.log(this)
+        axios.delete(`/api/trip/${this.props.match.params.tripId}`, tripId)
             .then(() => { this.refreshTrip() })
             .then(() => { this.refreshTrip() })
     }

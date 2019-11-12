@@ -1,36 +1,13 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import { useDrag } from 'react-dnd'
-import { ItemTypes } from './Constants'
+
+// import ItemTypes from './ItemTypes'
+// import { DragSource } from 'react-dnd'
+
 
 
 class SingleStationElement extends Component {
-    componentDidMount() {
-        this.refreshTrip()
-    }
-    refreshTrip=() => {
-        axios.get('/api/stationary/byTripId/5dc598bbd01fd54300eafaab')
-        .then((response)=> {
 
-            this.setState({
-                stationaryList: response.data
-            })
-            // .then(console.log(this.state))
-        })
-    }
-    Card({ isDragging, text }) {
-        const [{ opacity }, dragRef] = useDrag({
-          item: { type: ItemTypes.CARD, text },
-          collect: monitor => ({
-            opacity: monitor.isDragging() ? 0.5 : 1,
-          }),
-        })
-        return (
-          <div ref={dragRef} style={{ opacity }}>
-            {text}
-          </div>
-        )
-      }
+
 
 
 
@@ -39,7 +16,7 @@ class SingleStationElement extends Component {
             name,
             // stationId,
             // tripId,
-            // methodOfStay,
+            methodOfStay,
             // costOfStay,
             // permitOrReservation,
             // lengthOfStay,
@@ -52,7 +29,7 @@ class SingleStationElement extends Component {
             // accessWeb
         } = this.props;
         return (
-            <div className="singleStationDetail">
+            <div className="singleStationDetail" id={methodOfStay || "defaultId"}>
                 <h4>{name}</h4>
 
             </div>
