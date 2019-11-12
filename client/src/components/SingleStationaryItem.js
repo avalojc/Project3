@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { useDrag } from 'react-dnd'
+import { ItemTypes } from './Constants'
 
 
 class SingleStationElement extends Component {
-
     componentDidMount() {
         this.refreshTrip()
     }
@@ -17,6 +18,20 @@ class SingleStationElement extends Component {
             // .then(console.log(this.state))
         })
     }
+    Card({ isDragging, text }) {
+        const [{ opacity }, dragRef] = useDrag({
+          item: { type: ItemTypes.CARD, text },
+          collect: monitor => ({
+            opacity: monitor.isDragging() ? 0.5 : 1,
+          }),
+        })
+        return (
+          <div ref={dragRef} style={{ opacity }}>
+            {text}
+          </div>
+        )
+      }
+
 
 
     render() {
