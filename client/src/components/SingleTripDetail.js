@@ -8,17 +8,17 @@ class SingleTripDetail extends Component {
     state = {
         redirect: false
     }
-    refreshTrip=() => {
-        axios.get('/api/trip')
-        .then((response)=> {
-            this.setState({
-                tripList: response.data
-            })
-        })
-    }
-    componentDidMount() {
-        this.refreshTrip()
-    }
+    // refreshTrip=() => {
+    //     axios.get('/api/trip')
+    //     .then((response)=> {
+    //         this.setState({
+    //             tripList: response.data
+    //         })
+    //     })
+    // }
+    // componentDidMount() {
+    //     this.refreshTrip()
+    // }
     
     deleteTrip = (tripId) => {
         console.log('deleting')
@@ -27,7 +27,7 @@ class SingleTripDetail extends Component {
     comboDeleteAndRedirect= () => {
         this.deleteTrip()
         this.setTheRedirect()
-        this.refreshTrip()
+
     }
     setTheRedirect = () => {
         console.log('setting state')
@@ -52,6 +52,7 @@ class SingleTripDetail extends Component {
 
         return (
             <div className="singleTripDetail">
+                {this.renderRedirect()}
                 <h3> {name || 'Peter Piper'} 
                     <button onClick={()=> {console.log('click edit')}}>Edit</button> 
                 </h3>
