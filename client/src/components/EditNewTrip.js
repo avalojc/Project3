@@ -61,7 +61,13 @@ class Trips extends Component {
                     onChange={this.onNewTripAdd}
                     value={this.state.newTripName}
                 />
-
+                <input type="string"
+                    name="edit creature name"
+                    placeholder="edit Creature Name"
+                    required="required"
+                    // onChange=
+                    // value=
+                />
                 <input type="submit"
                     onClick={ () => this.comboCreateAndRedirect() }
                 />

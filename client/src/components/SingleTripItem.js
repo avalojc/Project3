@@ -7,21 +7,25 @@ class SingleTripItem extends Component {
         name: '',
         legId: ''
     } //this will be used to edit eventually?
-    componentDidMount() {
-        this.refreshTrip()
-    }
-    refreshTrip = () => {
-        axios.get('/api/trip/')
-            .then((response) => {
-                console.log('here')
-                this.setState({
-                    tripList: response.data
-                })
-            })
-    }
+    // componentDidMount() {
+    //     this.refreshTrip()
+    // }
+    // refreshTrip = () => {
+    //     axios.get('/api/trip/')
+    //         .then((response) => {
+    //             console.log('here')
+    //             this.setState({
+    //                 tripList: response.data
+    //             })
+    //         })
+    // }
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
-            .then(() => { this.refreshTrip() })
+             .then(() => { 
+                const removedId=(this.props.tripId)
+                document.getElementById(removedId).style.display = 'none' 
+                
+                })
     }
     render() {
         const {
@@ -33,7 +37,7 @@ class SingleTripItem extends Component {
 
 
         return (
-            <div className="singleTripUnit">
+            <div className="singleTripUnit" id={tripId}>
                 <Link to={`/trips/single/${tripId}`}>
                 <h3> {name || 'default'} </h3></Link>
                 <p> {legId || 'SingleTripItem Id'} </p>

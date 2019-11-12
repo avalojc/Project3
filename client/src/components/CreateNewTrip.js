@@ -60,6 +60,7 @@ class Trips extends Component {
                     required="required"
                     onChange={this.onNewTripAdd}
                     value={this.state.newTripName}
+                    maxLength={10}
                 />
 
                 <input type="submit"

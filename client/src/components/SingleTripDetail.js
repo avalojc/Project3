@@ -52,12 +52,14 @@ class SingleTripDetail extends Component {
 
         return (
             <div className="singleTripDetail">
-                <h3> {name || 'Peter Piper'} </h3>
+                <h3> {name || 'Peter Piper'} 
+                    <button onClick={()=> {console.log('click edit')}}>Edit</button> 
+                </h3>
                 <p> {legId || 'Yeet Id'} </p>
                 <p> {this.props.match.params.tripId || 'aqui'}</p>
                 <Link to={`/trips/assn/${this.props.match.params.tripId}`}>See Assn</Link> <br></br>
                 <button onClick={() => this.comboDeleteAndRedirect()}>Delete Trip</button>
-                <button>Edit</button>
+                
             </div>
         )
     }
