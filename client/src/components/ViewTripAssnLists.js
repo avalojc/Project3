@@ -19,20 +19,16 @@ class ViewTripAssn extends Component {
     }
 
     stationaryItemPopulate=()=>{
-        console.log(this.props.match.params.tripId)
         axios.get(`/api/stationary/byTripId/${this.props.match.params.tripId}`)
         .then((response)=> {
-            console.log(response)
             this.setState({
                 stationaryList: response.data
             })
         })
     }
     mobileItemPopulate=()=>{
-        console.log(this.props.match.params.tripId)
         axios.get(`/api/mobile/byTripId/${this.props.match.params.tripId}`)
         .then((response)=> {
-            console.log(response)
             this.setState({
                 mobileList: response.data
             })

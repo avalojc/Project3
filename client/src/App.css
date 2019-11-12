@@ -125,7 +125,8 @@ a{
 .singleStationDetail{
   margin: 10px;
   background-color: palevioletred;
-  width: 750px;
+  width: 75px;
+  height: 75px;
 }
 .stationaryList {
   display: flex;
@@ -134,7 +135,8 @@ a{
 .singleMobileDetail{
   margin: 10px;
   background-color: paleturquoise;
-  width: 750px;
+  width: 75px;
+  height: 75px;
 }
 .mobileList {
   display: flex;
