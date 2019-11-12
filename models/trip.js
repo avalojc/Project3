@@ -2,6 +2,7 @@ const mongoose = require('./connection.js')
 const TripModelSchema = new mongoose.Schema({
   name: String,
   description: String,
+  tripType: String
 })
 const TripCollection = mongoose.model('Trip', TripModelSchema)
 //getAll
