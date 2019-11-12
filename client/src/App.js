@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/trips" component={TripList} />
             <Route exact path="/trips/createTrip" component={CreateTrip}/>
             <Route exact path="/trips/single/:tripId" component={SingleTripDetail}/>
-            <Route exact path="/trips/single/:tripId/edit" component={SingleTripDetail}/>
+            <Route exact path="/trips/single/:tripId/edit" component={EditTrip}/>
             <Route exact path="/trips/assn/:tripId" component={ViewTripAssn}/>
             <Route exact path="/trips/assn/:tripId/:stationId" component={SingleStationElement}/>
           </Switch>

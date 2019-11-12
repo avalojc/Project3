@@ -36,7 +36,7 @@ class SingleTripDetail extends Component {
     }      
  renderRedirectEdit = () => {
         if (this.state.redirectEdit === true)
-                {return <Redirect to='/trips/single/:tripId/edit' />}}
+                {return <Redirect to='/trips/single/{this.props.match.params.tripId}/edit' />}}
 
 
     render() {

@@ -7,35 +7,27 @@ import axios from 'axios'
 class EditTrip extends Component {
     state = {
         tripList: [],
-        newTripName: '',
         redirect: false,
-
+        updateName: '',
+        updateDescription: '',
+        updateTripType: ''
     }
-    // componentDidMount() {
-    //     this.refreshTrip()
 
-    // }
-    // refreshTrip=() => {
-    //     axios.get('/api/trip')
-    //     .then((response)=> {
-    //         this.setState({
-    //             tripList: response.data
-    //         })
-    //     })
-    // }
-    createNewTrip=()=> {
+    editExistingTrip=()=> {
         const newTrip = {
-            name: this.state.newTripName,
+            updateName: this.state.newTripName,
+            updateDescription:this.state.newTripName,
+            updateTripType:this.state.newTripName,
         };
-        axios.post('/api/trip', newTrip)
+        axios.put('/api/trip', newTrip)
     }
-    onNewTripAdd = (event) => {
-        const newTripName = event.target.value;
-        this.setState({newTripName: newTripName})
+    onEditTrip = (event) => {
+        const updateName = event.target.value;
+        this.setState({updateName: updateName})
     }
     ///////////////redirect on submit///////////////////
-    comboCreateAndRedirect= () => {
-        this.createNewTrip()
+    comboEditAndRedirect= () => {
+        this.editExistingTrip()
         this.setTheRedirect()
         // .then(()=>{this.setTheRedirect()})
     }
@@ -46,31 +38,39 @@ class EditTrip extends Component {
     }        
     renderRedirect = () => {
     if (this.state.redirect === true)
-            {return <Redirect to='/trips' />}}
+            {return <Redirect to='/trips/single/:tripId' />}}
 
 
   render () {
+
     return (
         <div>
             {this.renderRedirect()}
-            <h1>Create New Trip</h1>
+            <h1>Edit Trip {this.props.match.params.tripId}</h1>
             <form>
                 <input type="string"
                     name="newTripName"
-                    placeholder="Add a Trip"
+                    placeholder="Rename Trip"
                     required="required"
                     onChange={this.onNewTripAdd}
                     value={this.state.newTripName}
-                />
+                /><br></br>
                 <input type="string"
                     name="edit creature name"
-                    placeholder="edit Creature Name"
+                    placeholder="Edit Trip Type"
                     required="required"
                     // onChange=
                     // value=
-                />
+                /><br></br>
+                <input type="string"
+                    name="edit creature name"
+                    placeholder="Edit Description"
+                    required="required"
+                    // onChange=
+                    // value=
+                /><br></br>
                 <input type="submit"
-                    onClick={ () => this.comboCreateAndRedirect() }
+                    onClick={ () => this.comboEditAndRedirect() }
                 />
             </form> 
 
