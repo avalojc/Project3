@@ -3,10 +3,7 @@ import axios from 'axios'
 
 
 class SingleStationElement extends Component {
-    state = {
-        stationaryList: [],
-        newStationName: '',
-    }
+
     componentDidMount() {
         this.refreshTrip()
     }

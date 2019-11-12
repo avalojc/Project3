@@ -3,10 +3,7 @@ import axios from 'axios'
 
 
 class SingleMobileElement extends Component {
-    state = {
-        mobileList: [],
-        newMobileName: '',
-    }
+
     componentDidMount() {
         this.refreshTrip()
     }

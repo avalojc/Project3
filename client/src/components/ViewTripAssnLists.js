@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import SingleStationElement from './SingleStationaryItem'
 import SingleMobileElement from './SingleMobileItem'
-import { useDrag } from 'react-dnd'
-import { ItemTypes } from './Constants'
+
 
 
 
@@ -50,14 +49,7 @@ class ViewTripAssn extends Component {
 //need on station/ mobile add
 
     render() {
-        Card=({ isDragging, text })=> {
-        const [{ opacity }, dragRef] = useDrag({
-            item: { type: ItemTypes.CARD, text },
-            collect: monitor => ({
-              opacity: monitor.isDragging() ? 0.5 : 1,
-            }),
-          })
-        }
+
         //correct render to return single state and single mobile
         const stationaryListElements = this.state.stationaryList.map((station) => {
             return(
@@ -106,9 +98,6 @@ class ViewTripAssn extends Component {
             <div id='thePathway'>
                 The Pathway
             </div>
-            <div ref={dragRef} style={{ opacity }}>
-      HeLLLOOOOOOOOOOO WORLD
-    </div>
             <div className="stationaryList">
                 <div> { stationaryListElements }</div>
             </div>

@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 
 
 class SingleTripDetail extends Component {
-    state = {
-        tripList: [],
-        newTripName: '',
-        name: '',
-        legId: ''
-    }
+
     refreshTrip=() => {
         axios.get('/api/trip')
         .then((response)=> {
