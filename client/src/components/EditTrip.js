@@ -4,24 +4,25 @@ import axios from 'axios'
 
 
 
-class Trips extends Component {
+class EditTrip extends Component {
     state = {
         tripList: [],
         newTripName: '',
-        redirect: false
-    }
-    componentDidMount() {
-        this.refreshTrip()
+        redirect: false,
 
     }
-    refreshTrip=() => {
-        axios.get('/api/trip')
-        .then((response)=> {
-            this.setState({
-                tripList: response.data
-            })
-        })
-    }
+    // componentDidMount() {
+    //     this.refreshTrip()
+
+    // }
+    // refreshTrip=() => {
+    //     axios.get('/api/trip')
+    //     .then((response)=> {
+    //         this.setState({
+    //             tripList: response.data
+    //         })
+    //     })
+    // }
     createNewTrip=()=> {
         const newTrip = {
             name: this.state.newTripName,
@@ -78,4 +79,4 @@ class Trips extends Component {
     }
 }
 
-export default Trips
+export default EditTrip

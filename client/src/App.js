@@ -8,6 +8,7 @@ import './App.css';
 import SingleTripDetail from './components/SingleTripDetail';
 import ViewTripAssn from './components/ViewTripAssnLists';
 import SingleStationElement from './components/SingleStationaryItem'
+import EditTrip from './components/EditTrip'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/trips" component={TripList} />
             <Route exact path="/trips/createTrip" component={CreateTrip}/>
             <Route exact path="/trips/single/:tripId" component={SingleTripDetail}/>
+            <Route exact path="/trips/single/:tripId/edit" component={SingleTripDetail}/>
             <Route exact path="/trips/assn/:tripId" component={ViewTripAssn}/>
             <Route exact path="/trips/assn/:tripId/:stationId" component={SingleStationElement}/>
           </Switch>

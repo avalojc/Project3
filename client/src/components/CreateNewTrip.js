@@ -10,18 +10,7 @@ class Trips extends Component {
         newTripName: '',
         redirect: false
     }
-    componentDidMount() {
-        this.refreshTrip()
 
-    }
-    refreshTrip=() => {
-        axios.get('/api/trip')
-        .then((response)=> {
-            this.setState({
-                tripList: response.data
-            })
-        })
-    }
     createNewTrip=()=> {
         const newTrip = {
             name: this.state.newTripName,
