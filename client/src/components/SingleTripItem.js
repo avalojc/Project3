@@ -22,7 +22,6 @@ class SingleTripItem extends Component {
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
             .then(() => { this.refreshTrip() })
-            .then(() => { this.refreshTrip() })
     }
     render() {
         const {

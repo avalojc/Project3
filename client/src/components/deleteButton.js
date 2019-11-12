@@ -1,21 +1,18 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-
-
-class deleteItem extends Component {
-
-    deleteTrip = (tripId) => {
-        axios.delete(`/api/trip/${this.props.tripId}`, tripId)
-            .then(() => { this.refreshTrip() })
-            .then(() => { this.refreshTrip() })
-    }
-    render() {
-        return (
-            <div> 
-                <button onClick={() => this.deleteTrip()}>Delete</button>
-            </div>
-        )
-    }
+deleteTrip = (tripId) => {
+    console.log('deleting')
+    axios.delete(`/api/trip/${this.props.match.params.tripId}`, tripId)
 }
-
-export default deleteItem
+comboDeleteAndRedirect= () => {
+    this.deleteTrip()
+    this.setTheRedirect()
+    // .then(()=>{this.setTheRedirect()})
+}
+setTheRedirect = () => {
+    console.log('setting state')
+    this.setState({
+        redirect: true
+    })
+}      
+renderRedirect = () => {
+    if (this.state.redirect === true)
+            {return <Redirect to='/trips' />}}

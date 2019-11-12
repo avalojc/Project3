@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom'
 
 
 class SingleTripDetail extends Component {
-
+    state = {
+        redirect: false
+    }
     refreshTrip=() => {
         axios.get('/api/trip')
         .then((response)=> {
@@ -16,12 +19,28 @@ class SingleTripDetail extends Component {
     componentDidMount() {
         this.refreshTrip()
     }
+    
     deleteTrip = (tripId) => {
-        console.log(this)
+        console.log('deleting')
         axios.delete(`/api/trip/${this.props.match.params.tripId}`, tripId)
-            .then(() => { this.refreshTrip() })
-            .then(() => { this.refreshTrip() })
     }
+    comboDeleteAndRedirect= () => {
+        this.deleteTrip()
+        this.setTheRedirect()
+        this.refreshTrip()
+    }
+    setTheRedirect = () => {
+        console.log('setting state')
+        this.setState({
+            redirect: true
+        })
+    }      
+    renderRedirect = () => {
+        if (this.state.redirect === true)
+                {return <Redirect to='/trips' />}}
+
+
+
     render() {
         const {
             name,
@@ -37,7 +56,8 @@ class SingleTripDetail extends Component {
                 <p> {legId || 'Yeet Id'} </p>
                 <p> {this.props.match.params.tripId || 'aqui'}</p>
                 <Link to={`/trips/assn/${this.props.match.params.tripId}`}>See Assn</Link> <br></br>
-                <button onClick={() => this.deleteTrip()}>Delete Trip</button>
+                <button onClick={() => this.comboDeleteAndRedirect()}>Delete Trip</button>
+                <button>Edit</button>
             </div>
         )
     }
