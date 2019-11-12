@@ -21,9 +21,17 @@ class EditTrip extends Component {
         };
         axios.put('/api/trip', newTrip)
     }
-    onEditTrip = (event) => {
+    onEditTripName = (event) => {
         const updateName = event.target.value;
         this.setState({updateName: updateName})
+    }
+    onEditDescription = (event) => {
+        const updateDescription = event.target.value;
+        this.setState({updateDescription: updateDescription})
+    }
+    onEditTripType = (event) => {
+        const updateTripType = event.target.value;
+        this.setState({updateTripType: updateTripType})
     }
     ///////////////redirect on submit///////////////////
     comboEditAndRedirect= () => {
@@ -52,22 +60,22 @@ class EditTrip extends Component {
                     name="newTripName"
                     placeholder="Rename Trip"
                     required="required"
-                    onChange={this.onNewTripAdd}
-                    value={this.state.newTripName}
+                    onChange={this.onEditTripName}
+                    value={this.state.updateName}
                 /><br></br>
                 <input type="string"
                     name="edit creature name"
                     placeholder="Edit Trip Type"
                     required="required"
-                    // onChange=
-                    // value=
+                    onChange={this.onEditDescription}
+                    value={this.state.updateDescription}
                 /><br></br>
                 <input type="string"
                     name="edit creature name"
                     placeholder="Edit Description"
                     required="required"
-                    // onChange=
-                    // value=
+                    onChange={this.onEditTripType}
+                    value={this.state.updateTripType}
                 /><br></br>
                 <input type="submit"
                     onClick={ () => this.comboEditAndRedirect() }
