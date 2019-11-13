@@ -192,3 +192,17 @@ a{
   display: flex;
   justify-content: center;
 }
+
+/*styling div ids*/
+#Automobile {
+  background-image: url("img/auto.png");
+  background-size: 100%;
+}
+#Cruise {
+  background-image: url("img/boat.png");
+  background-size: 100%;
+}
+#Hike {
+  background-image: url("img/walk.png");
+  background-size: 100%;
+}

@@ -41,7 +41,8 @@ class TripList extends Component {
                 key={trip._id}
                 tripId={trip._id}
                 name={trip.name}
-                legId={trip.legId}
+                description={trip.description}
+                tripType={trip.tripType}
             />
         )
     })

@@ -43,8 +43,8 @@ class SingleTripDetail extends Component {
     render() {
         const {
             name,
-            legId,
-            // tripId
+            description,
+            //  tripId
         } = this.props;
 
 
@@ -56,7 +56,7 @@ class SingleTripDetail extends Component {
                 <h3> {name || 'Peter Piper'} 
                 <button onClick={()=> {this.setTheRedirectEdit()}}>Edit</button> 
                 </h3>
-                <p> {legId || 'Yeet Id'} </p>
+                <p> {description || 'Yeet Id'} </p>
                 <p> {this.props.match.params.tripId || 'aqui'}</p>
                 <Link to={`/trips/assn/${this.props.match.params.tripId}`}>See Assn</Link> <br></br>
                 <button onClick={() => this.comboDeleteAndRedirect()}>Delete Trip</button>

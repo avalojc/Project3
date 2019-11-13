@@ -5,20 +5,21 @@ import { Link } from "react-router-dom";
 class SingleTripItem extends Component {
     state = {
         name: '',
-        legId: ''
+        description: '',
+        tripId: ''
     } //this will be used to edit eventually?
-    // componentDidMount() {
-    //     this.refreshTrip()
-    // }
-    // refreshTrip = () => {
-    //     axios.get('/api/trip/')
-    //         .then((response) => {
-    //             console.log('here')
-    //             this.setState({
-    //                 tripList: response.data
-    //             })
-    //         })
-    // }
+    componentDidMount() {
+        this.refreshTrip()
+    }
+    refreshTrip = () => {
+        axios.get(`/api/trip/${this.props.match}`)
+            .then((response) => {
+                console.log(response.data)
+                this.setState({
+                    name: response.data
+                })
+            })
+    }
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
              .then(() => { 
@@ -30,18 +31,19 @@ class SingleTripItem extends Component {
     render() {
         const {
             name,
-            legId,
-            tripId
+            description,
+            tripId,
+            tripType
         } = this.props;
 
 
 
         return (
-            <div className="singleTripUnit" id={tripId}>
+            <div className="singleTripUnit" id={tripType}>
                 <Link to={`/trips/single/${tripId}`}>
                     <h3> {name || 'default'} </h3>
                 </Link>
-                <p> {legId || 'SingleTripItem Id'} </p>
+                <p> {description || 'SingleTripItem Id'} </p>
                 <button onClick={() => this.deleteTrip()}>Delete Trip</button>
             </div>
         )
