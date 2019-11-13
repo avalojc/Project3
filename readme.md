@@ -12,9 +12,9 @@ Trello Board:
 
 
 WireFrame and original ERD
-![wireframe](/rmimg/zWireFrame1.jpg)
-![ERD Original](/rmimg/zERD1.jpg)
+![wireframe](/public/rmimg/zWireFrame1.jpg)
+![ERD Original](/public/rmimg/zERD1.jpg)
 
 Final ERD
-![ERD Final](/rmimg/zERD2.jpg)
+![ERD Final](/public/rmimg/zERD2.jpg)
 
