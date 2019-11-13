@@ -1,14 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import TripList from './components/TripList'
-import HomePage from './components/TripHomePage'
-import CreateTrip from './components/CreateNewTrip'
+/////////////////////Trip Components/////////////////////////////////
+import TripList from './components/Trip/TripList'
+import CreateTrip from './components/Trip/CreateNewTrip'
+import SingleTripDetail from './components/Trip/SingleTripDetail';
+import EditTrip from './components/Trip/EditTrip'
+/////////////////////Children Components/////////////////////////////////
+import ViewTripAssn from './components/Children/ViewTripAssnLists';
+import SingleStationElement from './components/Children/SingleStationaryItem'
+/////////////////////App Items/////////////////////////////////
 import NavBar from './components/navBar';
+import HomePage from './components/TripHomePage'
+
 import './App.css';
-import SingleTripDetail from './components/SingleTripDetail';
-import ViewTripAssn from './components/ViewTripAssnLists';
-import SingleStationElement from './components/SingleStationaryItem'
-import EditTrip from './components/EditTrip'
 
 function App() {
   return (
