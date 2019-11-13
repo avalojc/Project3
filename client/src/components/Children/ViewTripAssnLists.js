@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import SingleStationElement from './SingleStationaryItem'
 import SingleMobileElement from './SingleMobileItem'
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -12,7 +12,10 @@ class ViewTripAssn extends Component {
         mobileList: [],
         newStationName: '',
         newMobileName: '',
+        sendToCreateElement: '',
+
     }
+    //////////////////////mounting
     componentDidMount() {
         this.refreshTrip()
     }
@@ -21,7 +24,7 @@ class ViewTripAssn extends Component {
         this.mobileItemPopulate()
     }
 
-
+///////////////////populate stationary and mobile
     stationaryItemPopulate=()=>{
         axios.get(`/api/stationary/byTripId/${this.props.match.params.tripId}`)
         .then((response)=> {
@@ -38,9 +41,8 @@ class ViewTripAssn extends Component {
             })
         })
     }
-    
 
-    
+ 
 
 
 
@@ -49,7 +51,9 @@ class ViewTripAssn extends Component {
 //need on station/ mobile add
 
     render() {
-
+        const {
+            tripId
+        } =this.props.match.params.tripId
         //correct render to return single state and single mobile
         const stationaryListElements = this.state.stationaryList.map((station) => {
             return(
@@ -98,13 +102,15 @@ class ViewTripAssn extends Component {
             <div id='thePathway'>
                 The Pathway
             </div>
+            <Link to={`trips/createElement/${tripId}/`}>createElement</Link>
+            
             <div className="stationaryList">
                 <div> { stationaryListElements }</div>
             </div>
             <div className="mobileList">
                 <div> { mobileListElements }</div>
             </div></div>
-        )
+        )//
     }
 }
 

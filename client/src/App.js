@@ -8,6 +8,7 @@ import EditTrip from './components/Trip/EditTrip'
 /////////////////////Children Components/////////////////////////////////
 import ViewTripAssn from './components/Children/ViewTripAssnLists';
 import SingleStationElement from './components/Children/SingleStationaryItem'
+import CreateElement from './components/Children/CreateElement'
 /////////////////////App Items/////////////////////////////////
 import NavBar from './components/navBar';
 import HomePage from './components/TripHomePage'
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/trips/single/:tripId/edit" component={EditTrip}/>
             <Route exact path="/trips/assn/:tripId" component={ViewTripAssn}/>
             <Route exact path="/trips/assn/:tripId/:stationId" component={SingleStationElement}/>
+            <Route exact path="/trips/createElement/:tripId/" component={CreateElement}/>
           </Switch>
         </div>
       </Router>
