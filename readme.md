@@ -12,9 +12,9 @@ https://trello.com/b/8ef3in6p/projectotres <br>
 
 
 WireFrame and original ERD
-![wireframe](zWireFrame1.jpg)
-![ERD Original](zERD1.jpg)
+![wireframe](/zWireFrame1.jpg)
+![ERD Original](/zERD1.jpg)
 
 Final ERD
-![ERD Final](zERD2.jpg)
+![ERD Final](/zERD2.jpg)
 
