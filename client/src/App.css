@@ -168,7 +168,6 @@ a{
   margin: 10px;
   height: 100px;
   width: 100px;
-  background-color: green;
  }
 
  /* ***********************************************************station blocks ********************************************* */
@@ -194,15 +193,15 @@ a{
 }
 
 /*styling div ids*/
-#Automobile {
+.Automobile {
   background-image: url("img/auto.png");
   background-size: 100%;
 }
-#Cruise {
+.Cruise {
   background-image: url("img/boat.png");
   background-size: 100%;
 }
-#Hike {
+.Hike {
   background-image: url("img/walk.png");
   background-size: 100%;
 }

@@ -1,33 +1,38 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import {Redirect} from 'react-router-dom'
 
 class SingleTripItem extends Component {
     state = {
         name: '',
         description: '',
-        tripId: ''
+        tripId: '',
+        sendMeToAllTrips: ''
     } //this will be used to edit eventually?
-    componentDidMount() {
-        this.refreshTrip()
-    }
-    refreshTrip = () => {
-        axios.get(`/api/trip/${this.props.match}`)
-            .then((response) => {
-                console.log(response.data)
-                this.setState({
-                    name: response.data
-                })
-            })
-    }
+
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
-             .then(() => { 
-                const removedId=(this.props.tripId)
-                document.getElementById(removedId).style.display = 'none' 
-                
-                })
+            .then(<Redirect to={`/trips/`}/>)
     }
+    ///////////////redirect on submit///////////////////
+    comboDeleteAndRedirect= () => {
+        this.deleteTrip()
+        this.setTheRedirect()
+        // .then(()=>{this.setTheRedirect()})
+    }
+    setTheRedirect = () => {
+        this.setState({
+            sendMeToAllTrips: true
+        })
+    }        
+    renderRedirect = () => {
+    if (this.state.sendMeToAllTrips === true)
+            {return <Redirect to={`/trips/`} />}}
+
+
+
+
     render() {
         const {
             name,
@@ -39,12 +44,13 @@ class SingleTripItem extends Component {
 
 
         return (
-            <div className="singleTripUnit" id={tripType}>
+            <div className={`singleTripUnit ${tripType}`} >
+                {this.renderRedirect()}
                 <Link to={`/trips/single/${tripId}`}>
                     <h3> {name || 'default'} </h3>
                 </Link>
                 <p> {description || 'SingleTripItem Id'} </p>
-                <button onClick={() => this.deleteTrip()}>Delete Trip</button>
+                <button onClick={() => this.comboDeleteAndRedirect()}>Delete</button>
             </div>
         )
     }

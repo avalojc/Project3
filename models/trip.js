@@ -15,11 +15,11 @@ const getOneTrip = (id) => {
 const createTrip = (tripData) => {
   return TripCollection.create(tripData)
 }//update
-const updateTrip = (id, tripData) => {
-  return TripCollection.updateOne({_id: id}, tripData)
+const updateTrip = (Qid, tripData) => {
+  return TripCollection.updateOne({_id: Qid}, tripData)
 }//delete 
-const deleteTrip = (id) => {
-  return TripCollection.deleteOne({_id: id})
+const deleteTrip = (Qid) => {
+  return TripCollection.deleteOne({_id: Qid})
 }
 module.exports = {
   getAllTrip,
