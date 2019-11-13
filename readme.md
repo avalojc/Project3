@@ -6,15 +6,15 @@ Have You Ever Not Realized That You Needed To Book A Campsite? <br>
 Then this App is for YOU!<br>
 
 Public App:
-https://projecto-tres.herokuapp.com/ <br>
+[Deployed Heroku Link](https://projecto-tres.herokuapp.com/) <br>
 Trello Board:
-https://trello.com/b/8ef3in6p/projectotres <br>
+[Trello Board Link](https://trello.com/b/8ef3in6p/projectotres) <br>
 
 
 WireFrame and original ERD
-![wireframe](/zWireFrame1.jpg)
-![ERD Original](/zERD1.jpg)
+![wireframe](/rmimg/zWireFrame1.jpg)
+![ERD Original](/rmimg/zERD1.jpg)
 
 Final ERD
-![ERD Final](/zERD2.jpg)
+![ERD Final](/rmimg/zERD2.jpg)
 
