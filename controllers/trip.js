@@ -15,6 +15,7 @@ tripRouter.get('/', (req, res) => {
 tripRouter.get('/:id', (req, res) => {
   tripApi.getOneTrip(req.params.id)
    .then((singleTrip) => {
+    //  res.json(singleTrip)
      //*******************************************linking*********************************** */
      stationaryApi.getAllStationaryByTripId(req.params.id)
       .then((tripStationary) => {

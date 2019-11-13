@@ -14,12 +14,14 @@ class EditTrip extends Component {
     }
 
     editExistingTrip=()=> {
-        const newTrip = {
-            updateName: this.state.newTripName,
-            updateDescription:this.state.newTripName,
-            updateTripType:this.state.newTripName,
+        console.log('here')
+        const updateTrip = {
+            name: this.state.updateName,
+            description: this.state.updateDescription,
+            tripType: this.state.updateTripType,
         };
-        axios.put('/api/trip', newTrip)
+        axios.put(`/api/trip/${this.props.match.params.tripId}`, updateTrip)
+         .then(function(){console.log('submitted')})
     }
     onEditTripName = (event) => {
         const updateName = event.target.value;
@@ -62,6 +64,7 @@ class EditTrip extends Component {
                     required="required"
                     onChange={this.onEditTripName}
                     value={this.state.updateName}
+                    maxLength={10}
                 /><br></br>
                 <input type="string"
                     name="edit creature name"
