@@ -10,7 +10,6 @@ class SingleStationElement extends Component {
 
 
 
-
     render() {
         const {
             name,

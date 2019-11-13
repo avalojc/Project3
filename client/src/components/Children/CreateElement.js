@@ -7,17 +7,19 @@ import axios from 'axios'
 
 class CreateElement extends Component {
             state = {
+            ///////////////mobile
             createMobile: '',
-            McreateEat: '',
-            McreateCost: '',
-            McreateIsTechnical: '',
-            McreateLevelOfDifficulty: '',
-            McreateMethodOfTransport: '',
-            McreateCostOfTransport: '',
-            McreatePermitOrPaperWork: '',
-            McreateLengthOfTravel: '',
-            McreatePackWeight: '',
-            McreatePassportRequired: '',
+            MCreateEat: '',
+            MCreateCost: '',
+            MCreateIsTechnical: '',
+            MCreateLevelOfDifficulty: '',
+            MCreateMethodOfTransport: '',
+            MCreateCostOfTransport: '',//holding
+            MCreatePermitOrPaperWork: '',
+            MCreateLengthOfTravel: '',
+            MCreatePackWeight: '',
+            MCreatePassportRequired: '',
+            //////////////stationary
             createStationary: '',
             redirectMeToAllElements: '',
             tripId: `${this.props.match.params.tripId}`
@@ -27,20 +29,20 @@ class CreateElement extends Component {
         const newMobile = {
             name: this.state.createMobile,
             eating: {
-                eat: this.state.McreateEat,
-                cost: this.state.McreateCost,
+                eat: this.state.MCreateEat,
+                cost: this.state.MCreateCost,
             },
             technicalSkill: {
-                isTechnical: this.state.McreateIsTechnical,
-                levelOfDifficulty: this.state.McreateLevelOfDifficulty,
+                isTechnical: this.state.MCreateIsTechnical,
+                levelOfDifficulty: this.state.MCreateLevelOfDifficulty,
             },
             tripId: `${this.state.tripId}`,
-            methodOfTransport: this.state.McreateMethodOfTransport,
-            costOfTransport: this.state.McreateCostOfTransport,
-            permitOrPaperwork: this.state.McreatePermitOrPaperWork,
-            lengthOfTravel: this.state.McreateLengthOfTravel,
-            packWeight: this.state.McreatePackWeight,
-            passportRequired: this.state.McreatePassportRequired,
+            methodOfTransport: this.state.MCreateMethodOfTransport,
+            costOfTransport: this.state.MCreateCostOfTransport,
+            permitOrPaperwork: this.state.MCreatePermitOrPaperWork,
+            lengthOfTravel: this.state.MCreateLengthOfTravel,
+            packWeight: this.state.MCreatePackWeight,
+            passportRequired: this.state.MCreatePassportRequired,
         };
         axios.post(`/api/mobile/`, newMobile)
     }
@@ -48,6 +50,47 @@ class CreateElement extends Component {
         const createMobile = event.target.value;
         this.setState({createMobile: createMobile})
     }
+    onNewEatAdd = (event) => {
+        const MCreateEat = event.target.value;
+        this.setState({MCreateEat: MCreateEat})
+    }
+    onNewEatCostAdd = (event) => {
+        const MCreateCost = event.target.value;
+        this.setState({MCreateCost: MCreateCost})
+    }
+    onNewTechSkillAdd = (event) => {
+        const MCreateIsTechnical = event.target.value;
+        this.setState({MCreateIsTechnical: MCreateIsTechnical})
+    }
+    onNewDiffLevelAdd = (event) => {
+        const MCreateLevelOfDifficulty = event.target.value;
+        this.setState({MCreateLevelOfDifficulty: MCreateLevelOfDifficulty})
+    }
+    onNewMethodOfTransportationAdd = (event) => {
+        const MCreateMethodOfTransport = event.target.value;
+        this.setState({MCreateMethodOfTransport: MCreateMethodOfTransport})
+    }
+    onNewCostOfTransportAdd = (event) => {
+        const MCreateCostOfTransport = event.target.value;
+        this.setState({MCreateCostOfTransport: MCreateCostOfTransport})
+    }
+    onNewPermitOrPaperWorkAdd = (event) => {
+        const MCreatePermitOrPaperWork = event.target.value;
+        this.setState({MCreatePermitOrPaperWork: MCreatePermitOrPaperWork})
+    }
+    onNewLengthOfTravelAdd = (event) => {
+        const MCreateLengthOfTravel = event.target.value;
+        this.setState({MCreateLengthOfTravel: MCreateLengthOfTravel})
+    }
+    onNewPackWeightAdd = (event) => {
+        const MCreatePackWeight = event.target.value;
+        this.setState({MCreatePackWeight: MCreatePackWeight})
+    }
+    onNewPassportReqAdd = (event) => {
+        const MCreatePassportRequired = event.target.value;
+        this.setState({MCreatePassportRequired: MCreatePassportRequired})
+    }
+
     ///////////////redirect on submit///////////////////
     comboCreateAndRedirect= () => {
         this.createNewMobile()
@@ -71,7 +114,7 @@ class CreateElement extends Component {
             <div>
             {this.renderRedirect()}
             <h1>Create New Mobile</h1>
-            <form>
+            <form> Name Mobile: 
                 <input type="string"
                     name="newMobileName"
                     placeholder="Add a Mobile"
@@ -79,79 +122,87 @@ class CreateElement extends Component {
                     onChange={this.onNewMobileAdd}
                     value={this.state.createMobile}
                     maxLength={10}
-                /><br></br>
+                /><br></br> Will you need to eat on this leg?  
+                <input type="boolean"
+                    name="newMobileName"
+                    placeholder="Will You Be Eating"
+                    required="required"
+                    onChange={this.onNewEatAdd}
+                    value={this.state.MCreateEat}
+                    maxLength={10}
+                /><br></br> How much will it cost? 
+                <input type="number"
+                    name="newMobileName"
+                    placeholder="Cost Of Food"
+                    required="required"
+                    onChange={this.onNewEatCostAdd}
+                    value={this.state.MCreateCost}
+                    maxLength={10}
+                /><br></br>Technical Skills required? 
+                <input type="boolean"
+                    name="newMobileName"
+                    placeholder="Does This Trip Require Technical Skills"
+                    required="required"
+                    onChange={this.onNewTechSkillAdd}
+                    value={this.state.MCreateIsTechnical}
+                    maxLength={10}
+                /><br></br>Level of Difficulty? 
                 <input type="string"
                     name="newMobileName"
-                    placeholder="Add a Mobile"
+                    placeholder="What Level Of Difficulty Is The Trip"
                     required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.McreateEat}
+                    onChange={this.onNewDiffLevelAdd}
+                    value={this.state.MCreateLevelOfDifficulty}
                     maxLength={10}
-                /><br></br>
+                /><br></br>MethodOfTransportation: 
                 <input type="string"
                     name="newMobileName"
-                    placeholder="Add a Mobile"
+                    placeholder="What Is Your Method Of Transportation"
                     required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
+                    onChange={this.onNewMethodOfTransportationAdd}
+                    value={this.state.MCreateMethodOfTransport}
                     maxLength={10}
-                /><br></br>
+                /><br></br>Cost of MethodOfTransportation? 
+                <input type="number"
+                    name="newMobileName"
+                    placeholder="How Much Does This Method Of Transport Cost"
+                    required="required"
+                    onChange={this.onNewCostOfTransportAdd}
+                    value={this.state.MCreateCostOfTransport}
+                    maxLength={10}
+                /><br></br>Do you need a permit or paperwork? 
                 <input type="string"
                     name="newMobileName"
-                    placeholder="Add a Mobile"
+                    placeholder="Do You Need A Permit Or Paperwork"
                     required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
+                    onChange={this.onNewPermitOrPaperWorkAdd}
+                    value={this.state.MCreatePermitOrPaperWork}
                     maxLength={10}
-                /><br></br>
-                <input type="string"
+                /><br></br> How many hours will you be Traveling? 
+                <input type="number"
                     name="newMobileName"
-                    placeholder="Add a Mobile"
+                    placeholder="How Many Hours Will You Be Traveling"
                     required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
+                    onChange={this.onNewLengthOfTravelAdd}
+                    value={this.state.MCreateLengthOfTravel}
                     maxLength={10}
-                /><br></br>
-                <input type="string"
+                /><br></br> Pack Weight? 
+                <input type="number"
                     name="newMobileName"
-                    placeholder="Add a Mobile"
+                    placeholder="What Is Your Pack Weight"
                     required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
+                    onChange={this.onNewPackWeightAdd}
+                    value={this.state.MCreatePackWeight}
                     maxLength={10}
-                /><br></br>
+                /><br></br> Passport? 
                 <input type="string"
-                    name="newMobileName"
-                    placeholder="Add a Mobile"
-                    required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
-                    maxLength={10}
-                /><br></br>
-                <input type="string"
-                    name="newMobileName"
-                    placeholder="Add a Mobile"
-                    required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
-                    maxLength={10}
-                /><br></br>
-                <input type="string"
-                    name="newMobileName"
-                    placeholder="Add a Mobile"
-                    required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
-                    maxLength={10}
-                /><br></br>
-                <input type="string"
-                    name="newMobileName"
-                    placeholder="Add a Mobile"
-                    required="required"
-                    onChange={this.onNewMobileAdd}
-                    value={this.state.createMobile}
-                    maxLength={10}
-                /><br></br>
+                name="newMobileName"
+                placeholder="Do You Need A Passport"
+                required="required"
+                onChange={this.onNewPassportReqAdd}
+                value={this.state.MCreatePassportRequired}
+                maxLength={10}
+            /><br></br>
                 <input type="submit"
                     onClick={ () => this.comboCreateAndRedirect() }
                 />

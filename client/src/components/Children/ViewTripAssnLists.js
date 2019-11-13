@@ -13,7 +13,9 @@ class ViewTripAssn extends Component {
         newStationName: '',
         newMobileName: '',
         sendToCreateElement: '',
+        tripId:`${this.props.match.params.tripId}`
 
+        
     }
     //////////////////////mounting
     componentDidMount() {
@@ -53,7 +55,8 @@ class ViewTripAssn extends Component {
     render() {
         const {
             tripId
-        } =this.props.match.params.tripId
+        } =this.state.tripId
+
         //correct render to return single state and single mobile
         const stationaryListElements = this.state.stationaryList.map((station) => {
             return(
@@ -95,7 +98,6 @@ class ViewTripAssn extends Component {
                 />
             )
         })
-
         return (
             //correct to show {singleMobile/single Station}
             <div className="travelListAssn">
