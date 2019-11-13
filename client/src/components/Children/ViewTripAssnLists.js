@@ -13,8 +13,8 @@ class ViewTripAssn extends Component {
         newStationName: '',
         newMobileName: '',
         sendToCreateElement: '',
-        tripId:`${this.props.match.params.tripId}`
-
+        tripId:`${this.props.match.params.tripId}`,
+        valueOfTrip: ''
         
     }
     //////////////////////mounting
@@ -43,7 +43,9 @@ class ViewTripAssn extends Component {
             })
         })
     }
-
+    // addCosts=()=>{
+    //     {this.state.valueOfTrip} 
+    // }
  
 
 
