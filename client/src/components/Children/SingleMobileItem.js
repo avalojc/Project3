@@ -3,7 +3,12 @@ import axios from 'axios'
 
 
 class SingleMobileElement extends Component {
-
+    state = {
+        name: '',
+        methodOfTransport: '',
+        tripId: '',
+        sendMeToAllTrips: ''
+    }
     componentDidMount() {
         this.refreshTrip()
     }
@@ -35,7 +40,7 @@ class SingleMobileElement extends Component {
             // passportRequired,
         } = this.props;
         return (
-            <div className="singleMobileDetail" id={methodOfTransport || "defaultId"}>
+            <div className={`singleMobileDetail ${methodOfTransport}`} >
                 <h4> Title: {name}  </h4>
 
             </div>

@@ -196,12 +196,27 @@ a{
 .Automobile {
   background-image: url("img/auto.png");
   background-size: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .Cruise {
   background-image: url("img/boat.png");
-  background-size: 100%;
+
 }
 .Hike {
   background-image: url("img/walk.png");
+}
+.Bus {
+  background-image: url("img/bus.png");
+}
+.singleTripUnit {
   background-size: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.singleTripUnit button {
+  width: 50%;
+  background: rgb(43, 174, 226);
 }
