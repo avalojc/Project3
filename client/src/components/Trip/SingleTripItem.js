@@ -37,7 +37,7 @@ class SingleTripItem extends Component {
         const {
             name,
             description,
-            tripId,
+            // tripId,
             tripType
         } = this.props;
 

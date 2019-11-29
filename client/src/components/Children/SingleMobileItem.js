@@ -36,7 +36,7 @@ class SingleMobileElement extends Component {
             // eatCost,
             // eatYes,
             // isTechnical,
-            // levelOfDifficulty,
+            // levelOfDifficulty,n
             // passportRequired,
         } = this.props;
         return (
