@@ -50,7 +50,7 @@ class SingleTripItem extends Component {
                     <h3> {name || 'default'} </h3>
                 </Link>
                 <p> {description || 'SingleTripItem Id'} </p>
-                <button onClick={() => this.comboDeleteAndRedirect()}>Delete</button>
+                <button onClick={() => this.comboDeleteAndRedirect()}>x</button>
             </div>
         )
     }

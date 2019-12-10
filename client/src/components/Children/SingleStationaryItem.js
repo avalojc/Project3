@@ -41,21 +41,25 @@ class SingleStationElement extends Component {
             // stationId,
             // tripId,
             methodOfStay,
-            // costOfStay,
+            costOfStay,
             // permitOrReservation,
-            // lengthOfStay,
+            lengthOfStay,
             // amenities,
-            // eatCost,
+            eatCost,
             // eatYes,
             // accessElectric,
             // accessH2O,
             // accessRS,
-            // accessWeb
+            // accessWeb,
+            price = costOfStay + eatCost ,
+            
         } = this.props;
         return (
             <div className="singleStationDetail" id={methodOfStay || "defaultId"}>
                 <h4>{name}</h4>
-                <button onClick={() => this.comboDeleteAndRedirect()}>Delete</button>
+                <p>T:{lengthOfStay}</p>
+                <p>$:{price}</p>
+                <button onClick={() => this.comboDeleteAndRedirect()}>x</button>
             </div>
         )
     }

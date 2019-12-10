@@ -38,20 +38,23 @@ class SingleMobileElement extends Component {
             // mobileId,
             // tripId,
              methodOfTransport,
-            // costOfTransport,
+            costOfTransport,
             // permitOrPaperwork,
-            // lengthOfTravel,
+            lengthOfTravel,
             // packWeight,
-            // eatCost,
+            eatCost,
             // eatYes,
             // isTechnical,
-            // levelOfDifficulty,n
+            // levelOfDifficulty,
             // passportRequired,
+            price = costOfTransport+ eatCost
         } = this.props;
         return (
             <div className={`singleMobileDetail ${methodOfTransport}`} >
                 <h4> Title: {name}  </h4>
-                <button onClick={() => this.comboDeleteAndRedirect()}>Delete</button>
+                <p>T:{lengthOfTravel}</p>
+                <p>$:{price}</p>
+                <button onClick={() => this.comboDeleteAndRedirect()}>x</button>
             </div>
         )
     }

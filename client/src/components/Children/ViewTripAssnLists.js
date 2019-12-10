@@ -92,10 +92,10 @@ class ViewTripAssn extends Component {
                     permitOrPaperwork={mobile.permitOrPaperwork}
                     lengthOfTravel={mobile.lengthOfTravel}
                     packWeight={mobile.packWeight}
-                    eatCost={mobile.eatCost}
-                    eatYes={mobile.eatYes}
-                    isTechnical={mobile.isTechnical}
-                    levelOfDifficulty={mobile.levelOfDifficulty}
+                    eatCost={mobile.eating.eat}
+                    eatYes={mobile.eating.cost}
+                    isTechnical={mobile.technicalSkill.isTechnical}
+                    levelOfDifficulty={mobile.technicalSkill.levelOfDifficulty}
                     passportRequired={mobile.passportRequired}
                 />
             )
