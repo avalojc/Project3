@@ -1,26 +1,35 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import {Redirect} from 'react-router-dom'
 
 class SingleMobileElement extends Component {
     state = {
         name: '',
         methodOfTransport: '',
-        tripId: '',
+        tripId: this.props.tripId,
+        mobileId: this.props.mobileId,
         sendMeToAllTrips: ''
     }
-    componentDidMount() {
-        this.refreshTrip()
+
+
+    deleteTrip = (mobileId) => {
+        axios.delete(`/api/mobile/${this.props.mobileId}`, mobileId)
+            .then(<Redirect to={`/trips/assn/${this.props.tripId}`}/>)
     }
-    refreshTrip=() => {
-        axios.get('/api/mobile/byTripId/5dc598bbd01fd54300eafaab')
-        .then((response)=> {
-            this.setState({
-                mobileList: response.data
-            })
-            // .then(console.log(this.state))
+    ///////////////redirect on submit///////////////////
+    comboDeleteAndRedirect= () => {
+        this.deleteTrip()
+        this.setTheRedirect()
+        // .then(()=>{this.setTheRedirect()})
+    }
+    setTheRedirect = () => {
+        this.setState({
+            sendMeToAllTrips: true
         })
-    }
+    }        
+    renderRedirect = () => {
+    if (this.state.sendMeToAllTrips === true)
+            {return <Redirect to={`/trips/assn/${this.props.tripId}`} />}}
 
 
     render() {
@@ -42,7 +51,7 @@ class SingleMobileElement extends Component {
         return (
             <div className={`singleMobileDetail ${methodOfTransport}`} >
                 <h4> Title: {name}  </h4>
-
+                <button onClick={() => this.comboDeleteAndRedirect()}>Delete</button>
             </div>
         )
     }

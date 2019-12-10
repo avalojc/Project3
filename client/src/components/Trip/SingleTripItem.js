@@ -9,7 +9,7 @@ class SingleTripItem extends Component {
         description: '',
         tripId: '',
         sendMeToAllTrips: ''
-    } //this will be used to edit eventually?
+    } 
 
     deleteTrip = (tripId) => {
         axios.delete(`/api/trip/${this.props.tripId}`, tripId)
