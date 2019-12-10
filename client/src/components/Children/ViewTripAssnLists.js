@@ -55,9 +55,9 @@ class ViewTripAssn extends Component {
 //need on station/ mobile add
 
     render() {
-        const {
+        const 
             tripId
-        } =this.state.tripId
+         =this.props.match.params.tripId
 
         //correct render to return single state and single mobile
         const stationaryListElements = this.state.stationaryList.map((station) => {
@@ -106,7 +106,7 @@ class ViewTripAssn extends Component {
             <div id='thePathway'>
                 The Pathway
             </div>
-            <Link to={`trips/createElement/${tripId}/`}>createElement</Link>
+            <Link to={`/trips/createElement/${tripId}/`}>createElement</Link>
             
             <div className="stationaryList">
                 <div> { stationaryListElements }</div>

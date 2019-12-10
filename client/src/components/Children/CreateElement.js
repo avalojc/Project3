@@ -46,7 +46,7 @@ class CreateElement extends Component {
         };
         axios.post(`/api/mobile/`, newMobile)
     }
-        onNewMobileAdd = (event) => {
+    onNewMobileAdd = (event) => {
         const createMobile = event.target.value;
         this.setState({createMobile: createMobile})
     }
@@ -103,9 +103,10 @@ class CreateElement extends Component {
         })
     }        
     renderRedirect = () => {
-        const tripId = this.state.tripId
+    const tripId = this.state.tripId
     if (this.state.redirect === true)
-            {return <Redirect to={`/mobiles/${tripId}`} />}}
+            {return <Redirect to={`/mobiles/${tripId}`} />}
+    }
     render() {
 
 
