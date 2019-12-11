@@ -7,7 +7,21 @@ import {Redirect} from 'react-router-dom'
 class SingleTripDetail extends Component {
     state = {
         redirect: false,
-        redirectEdit: false
+        redirectEdit: false,
+        alltrips: []
+
+    }
+    componentDidMount() {
+        this.refreshTrip()
+    }
+    refreshTrip=() => {
+        axios.get(`/api/trip/`)
+        .then((response)=> {
+            this.setState({
+                alltrips: [response.data]
+            })
+            console.log(response.data)
+        })
     }
     
     deleteTrip = (tripId) => {
@@ -42,7 +56,7 @@ class SingleTripDetail extends Component {
 
     render() {
         const {
-            name,
+            name= this.state.name,
             description,
             //  tripId
         } = this.props;
@@ -51,14 +65,17 @@ class SingleTripDetail extends Component {
 
         return (
             <div className="singleTripDetail">
+
                 {this.renderRedirect()}
                 {this.renderRedirectEdit()}
-                <h3> {name || 'Peter Piper'} 
-                <button onClick={()=> {this.setTheRedirectEdit()}}>Edit</button> 
-                </h3>
-                <p> {description || 'Yeet Id'} </p>
+                <br></br>
+                <h3> Trip Id: {name} </h3>
+
+                
+                <p> {description } </p>
                 <p> {this.props.match.params.tripId || 'aqui'}</p>
-                <Link to={`/trips/assn/${this.props.match.params.tripId}`}>See Assn</Link> <br></br>
+                <Link to={`/trips/assn/${this.props.match.params.tripId}`}>See Trip Steps</Link> <br></br>
+                <button onClick={()=> {this.setTheRedirectEdit()}}>Edit</button> 
                 <button onClick={() => this.comboDeleteAndRedirect()}>Delete Trip</button>
                 
             </div>

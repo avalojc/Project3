@@ -15,7 +15,7 @@ class SingleStationElement extends Component {
     } 
     deleteTrip = (stationId) => {
         axios.delete(`/api/stationary/${this.props.stationId}`, stationId)
-            .then(<Redirect to={`/trips/assn${this.props.tripId}`}/>)
+            .then(<Redirect to={`/trips/assn/${this.props.tripId}`}/>)
     }
     ///////////////redirect on submit///////////////////
     comboDeleteAndRedirect= () => {

@@ -21,6 +21,17 @@ class CreateElement extends Component {
             MCreatePassportRequired: '',
             //////////////stationary
             createStationary: '',
+            SCreateEat: '',
+            SCreateCost: '',
+            SCreateWaterAccess: '',
+            SCreateElectricalAccess: '',
+            SCreateMethodOfStay: '',
+            SCreateCostOfStay: '',//holding
+            SCreatePermitOrReservation: '',
+            SCreateLengthOfStay: '',
+            SCreateAmenities: '',
+            SCreateInternetAccess: '',
+            SCreateRoomServiceAccess: '',
             redirectMeToAllElements: '',
             tripId: `${this.props.match.params.tripId}`
         }
@@ -90,6 +101,77 @@ class CreateElement extends Component {
         const MCreatePassportRequired = event.target.value;
         this.setState({MCreatePassportRequired: MCreatePassportRequired})
     }
+    createNewStation=()=> {
+        const newStation = {
+            name: this.state.createStation,
+            eating: {
+                eat: this.state.SCreateEat,
+                cost: this.state.SCreateCost,
+            },
+            access: {
+                waterAccess: this.state.SCreateWaterAccessl,
+                electricalAccess: this.state.SCreateElectricalAccess,
+                internetAccess: this.state.SCreateInternetAccess,
+                roomService: this.state.SCreateRoomService,
+            },
+            tripId: `${this.state.tripId}`,
+            methodOfStay: this.state.SCreateMethodOfStay,
+            costOfStay: this.state.SCreateCostOfStay,
+            permitOrReservation: this.state.SCreatePermitOrReservation,
+            lengthOfStay: this.state.SCreateLengthOfStay,
+            amenities: this.state.SCreateAmenities,
+        };
+        axios.post(`/api/stationary/`, newStation)
+    }
+    onNewStationAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({createStationary: createStation})
+    }
+    onNewSCreateEatAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateEat: createStation})
+    }
+    onNewSCreateEatCostAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateCost: createStation})
+    }
+    onNewSCreateWaterAccessAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateWaterAccess: createStation})
+    }
+    onNewSCreateElectricalAccessAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateElectricalAccess: createStation})
+    }
+    onNewSCreateMethodOfStayAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateMethodOfStay: createStation})
+    }
+    onNewSCreateCostOfStayAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateCostOfStay: createStation})
+    }
+    onNewSCreatePermitOrReservationAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreatePermitOrReservation: createStation})
+    }
+    onNewSCreateLengthOfStayAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateLengthOfStay: createStation})
+    }
+    onNewSCreateAmenitiesAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateAmenities: createStation})
+    }
+    onNewSCreateInternetAccessAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateInternetAccess: createStation})
+    }
+    onNewSCreateRoomServiceAccessAdd = (event) => {
+        const createStation = event.target.value;
+        this.setState({SCreateRoomServiceAccess: createStation})
+    }
+
 
     ///////////////redirect on submit///////////////////
     comboCreateAndRedirect= () => {
@@ -112,8 +194,9 @@ class CreateElement extends Component {
 
         return (
             //correct to show {singleMobile/single Station}
-            <div>
+            <div className="elementField">
             {this.renderRedirect()}
+            <div className="mobileBackground">
             <h1>Create New Mobile</h1>
             <form> Name Mobile: 
                 <input type="string"
@@ -208,6 +291,125 @@ class CreateElement extends Component {
                     onClick={ () => this.comboCreateAndRedirect() }
                 />
             </form> 
+        
+            </div>
+            <div className="stationaryBackground">
+            <h1>Create New Stationary</h1>
+            <form> Name Stationary: 
+                <input type="string"
+                    name="newStationName"
+                    placeholder="Add a Station"
+                    required="required"
+                    onChange={this.onNewStationAdd}
+                    value={this.state.createStationary}
+                    maxLength={10}
+                /><br></br> Will you need to eat on this leg?  
+                <input type="boolean"
+                    name="newStationName"
+                    placeholder="Will You Be Eating"
+                    required="required"
+                    onChange={this.onNewSCreateEatAdd}
+                    value={this.state.SCreateEat}
+                    maxLength={10}
+                /><br></br> How much will it cost? 
+                <input type="number"
+                    name="newStationName"
+                    placeholder="Cost Of Food"
+                    required="required"
+                    onChange={this.onNewSCreateEatCostAdd}
+                    value={this.state.SCreateCost}
+                    maxLength={10}
+                /><br></br>Do you need a permit or reservations? 
+                <input type="boolean"
+                    name="newStationName"
+                    placeholder="Does This Trip Require permit or reservations"
+                    required="required"
+                    onChange={this.onNewSCreatePermitOrReservationAdd}
+                    value={this.state.SCreatePermitOrReservation}
+                    maxLength={10}
+                /><br></br>What is your method of staying? 
+                <input type="string"
+                    name="newStationName"
+                    placeholder="What Level Of Difficulty Is The Trip"
+                    required="required"
+                    onChange={this.onNewSCreateMethodOfStayAdd}
+                    value={this.state.SCreateMethodOfStay}
+                    maxLength={10}
+                /><br></br>Length of stay: 
+                <input type="string"
+                    name="newStationName"
+                    placeholder="What Is Your Length Of Stay"
+                    required="required"
+                    onChange={this.onNewSCreateLengthOfStayAdd}
+                    value={this.state.SCreateLengthOfStay}
+                    maxLength={10}
+                /><br></br>Cost of method of staying? 
+                <input type="number"
+                    name="newStationName"
+                    placeholder="How Much Does This Method Of Transport Cost"
+                    required="required"
+                    onChange={this.onNewSCreateCostOfStayAdd}
+                    value={this.state.SCreateCostOfStay}
+                    maxLength={10}
+                /><br></br>What amenities? 
+                <input type="string"
+                    name="newStationName"
+                    placeholder="Do You Have Amenities"
+                    required="required"
+                    onChange={this.onNewSCreateAmenitiesAdd}
+                    value={this.state.SCreateAmenities}
+                    maxLength={10}
+                /><br></br> H20 access?
+                <input type="boolean"
+                    name="newStationName"
+                    placeholder="H2O?"
+                    required="required"
+                    onChange={this.onNewSCreateWaterAccessAdd}
+                    value={this.state.SCreateWaterAccess}
+                    maxLength={10}
+                /><br></br> Electrical access?
+                <input type="boolean"
+                    name="newStationName"
+                    placeholder="Electric?"
+                    required="required"
+                    onChange={this.onNewSCreateElectricalAccessAdd}
+                    value={this.state.SCreateElectricalAccess}
+                    maxLength={10}
+                /><br></br> Internet access?
+                <input type="boolean"
+                    name="newStationName"
+                    placeholder="Internet?"
+                    required="required"
+                    onChange={this.onNewSCreateInternetAccessAdd}
+                    value={this.state.SCreateInternetAccess}
+                    maxLength={10}
+                /><br></br> Room Service access?
+                <input type="boolean"
+                    name="newStationName"
+                    placeholder="Room Service?"
+                    required="required"
+                    onChange={this.onNewSCreateRoomServiceAccessAdd}
+                    value={this.state.SCreateRoomServiceAccess}
+                    maxLength={10}
+                />
+
+
+
+
+
+
+            <br></br>
+                <input type="submit"
+                    onClick={ () => this.comboCreateAndRedirect() }
+                />
+            </form> 
+        
+            </div>
+
+
+
+
+
             </div>
         )
     }
