@@ -341,7 +341,7 @@ class CreateElement extends Component {
                     value={this.state.SCreateMethodOfStay}
                     maxLength={10}
                 /><br></br>Length of stay: 
-                <input type="string"
+                <input type="number"
                     name="newStationName"
                     placeholder="What Is Your Length Of Stay"
                     required="required"
