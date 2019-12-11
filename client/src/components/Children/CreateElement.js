@@ -109,7 +109,7 @@ class CreateElement extends Component {
                 cost: this.state.SCreateCost,
             },
             access: {
-                waterAccess: this.state.SCreateWaterAccessl,
+                waterAccess: this.state.SCreateWaterAccess,
                 electricalAccess: this.state.SCreateElectricalAccess,
                 internetAccess: this.state.SCreateInternetAccess,
                 roomService: this.state.SCreateRoomService,
@@ -174,8 +174,13 @@ class CreateElement extends Component {
 
 
     ///////////////redirect on submit///////////////////
-    comboCreateAndRedirect= () => {
+    comboCreateAndRedirect1= () => {
         this.createNewMobile()
+        this.setTheRedirect()
+        // .then(()=>{this.setTheRedirect()})
+    }
+    comboCreateAndRedirect2= () => {
+        this.createNewStation()
         this.setTheRedirect()
         // .then(()=>{this.setTheRedirect()})
     }
@@ -288,7 +293,7 @@ class CreateElement extends Component {
                 maxLength={10}
             /><br></br>
                 <input type="submit"
-                    onClick={ () => this.comboCreateAndRedirect() }
+                    onClick={ () => this.comboCreateAndRedirect1() }
                 />
             </form> 
         
@@ -392,15 +397,9 @@ class CreateElement extends Component {
                     value={this.state.SCreateRoomServiceAccess}
                     maxLength={10}
                 />
-
-
-
-
-
-
             <br></br>
                 <input type="submit"
-                    onClick={ () => this.comboCreateAndRedirect() }
+                    onClick={ () => this.comboCreateAndRedirect2() }
                 />
             </form> 
         
