@@ -51,7 +51,7 @@ class SingleMobileElement extends Component {
         } = this.props;
         return (
             <div className={`singleMobileDetail ${methodOfTransport}`} >
-                <h4> Title: {name}  </h4>
+                <h4> {name}  </h4>
                 <p>T:{lengthOfTravel}</p>
                 <p>$:{price}</p>
                 <button onClick={() => this.comboDeleteAndRedirect()}>x</button>

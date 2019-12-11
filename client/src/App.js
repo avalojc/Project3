@@ -20,7 +20,6 @@ function App() {
     <div className="App">
       <Router>
         <NavBar/>
-        <h1>Hike, Bike, Paddle and Ski</h1>
         <div className='wrapper'>
           <Switch>
             <Route exact path="/" component={HomePage}/>

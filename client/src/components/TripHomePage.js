@@ -37,7 +37,7 @@ class Trips extends Component {
                 <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/hike.png')} alt='hike'></img></Link>
                 <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/bike.png')} alt='bike'></img></Link>
                 <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/paddle.png')} alt='paddle'></img></Link>
-                <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/ski.png')} alt='ski'></img></Link>
+                <Link to="/trips/createTrip"><img className="tinyIcon" src={require('../img/skii.jpg')} alt='ski'></img></Link>
             </div>
         </div>
         )
